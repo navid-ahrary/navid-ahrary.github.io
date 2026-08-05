@@ -1,11 +1,120 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<BaseLayout>
+  <section class="hero">
+    <div class="container">
+      <p class="eyebrow">CLOUD · PLATFORM · DEVOPS</p>
+
+      <h1>
+        I build cloud platforms
+        <span>that are automated, observable and secure.</span>
+      </h1>
+
+      <p class="intro">
+        I'm Navid Ahrary, a Cloud and Platform Engineer with a background in
+        backend development, focused on building cost-optimized, automated and
+        secure cloud platforms.
+      </p>
+
+      <div class="actions">
+        <a class="primary" href="/projects"> Explore my work </a>
+
+        <a class="secondary" href="#experience"> About my experience → </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="principles">
+    <div class="container">
+      <p class="section-label">ENGINEERING</p>
+
+      <h2>
+        Infrastructure should reduce complexity, not move it somewhere else.
+      </h2>
+
+      <p>
+        I care about practical architecture: automation where it removes
+        repetitive work, observability where systems can fail, and managed
+        services where operating something ourselves adds little value. Every
+      </p>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .hero {
+    min-height: calc(100vh - 72px);
+    display: flex;
+    align-items: center;
+  }
+
+  .eyebrow,
+  .section-label {
+    color: var(--accent);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+  }
+
+  h1 {
+    max-width: 1000px;
+    margin: 1.25rem 0;
+  }
+
+  h1 span {
+    display: block;
+    color: var(--text-muted);
+  }
+
+  .intro {
+    max-width: 680px;
+    font-size: 1.2rem;
+  }
+
+  .actions {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+
+  .primary {
+    background: var(--text);
+    color: var(--background);
+
+    padding: 0.8rem 1.2rem;
+    border-radius: 6px;
+
+    font-weight: 650;
+  }
+
+  .secondary {
+    color: var(--text-muted);
+  }
+
+  .secondary:hover {
+    color: var(--text);
+  }
+
+  .principles {
+    border-top: 1px solid var(--border);
+  }
+
+  .principles h2 {
+    max-width: 800px;
+  }
+
+  .principles p:last-child {
+    max-width: 700px;
+    font-size: 1.1rem;
+  }
+
+  @media (max-width: 600px) {
+    .actions {
+      align-items: flex-start;
+      flex-direction: column;
+    }
+  }
+</style>

@@ -1,0 +1,33 @@
+<footer>
+  <div class="container footer">
+    <span>Navid Ahrary</span>
+
+    <span>
+      Cloud · Platform · DevOps
+    </span>
+  </div>
+</footer>
+
+<style>
+  footer {
+    border-top: 1px solid var(--border);
+  }
+
+  .footer {
+    min-height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    color: var(--text-muted);
+    font-size: 0.9rem;
+  }
+
+  @media (max-width: 600px) {
+    .footer {
+      flex-direction: column;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+  }
+</style>
