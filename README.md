@@ -1,1 +1,0 @@
-# navid-ahrary.github.io
