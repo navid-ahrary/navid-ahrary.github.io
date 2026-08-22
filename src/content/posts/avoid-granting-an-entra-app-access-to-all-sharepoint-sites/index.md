@@ -17,11 +17,8 @@ tags:
 featured: true
 
 draft: false
-
-banner: "./banner.png"
 ---
 
-![Banner](./banner.png)
 
 When you need to grant an application read/write access to a specific site (rather than to all sites), there is no graphic interface in the Entra portal or SharePoint admin center. Maybe Microsfot is developing that, or it may be by design (my consideration).
 
@@ -35,7 +32,7 @@ The two apps:
 
 ### Why not give full power to the Target App?
 
-- Too risky — it could access **all sites**
+- Too risky, it could access **all sites**
 - Hard to control per client
 
 ## What You Need
