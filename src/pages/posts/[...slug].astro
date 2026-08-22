@@ -44,16 +44,6 @@ const { Content } = await render(post);
         </p>
       </header>
 
-      {
-        post.data.banner && (
-          <img
-            src={post.data.banner.src}
-            alt={post.data.title}
-            class="post-banner"
-          />
-        )
-      }
-
       <div class="post-content">
         <Content />
       </div>
