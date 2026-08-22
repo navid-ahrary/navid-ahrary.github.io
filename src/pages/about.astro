@@ -1,0 +1,229 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="About — Navid Ahrary"
+  description="Background, experience, and career journey of Navid Ahrary, a Cloud and Platform Engineer."
+>
+  <section class="about">
+    <div class="container">
+      <header class="page-header">
+        <div class="intro-content">
+          <p class="section-label">ABOUT</p>
+
+          <h1>
+            From telecommunications and backend development to cloud and
+            platform engineering.
+          </h1>
+        </div>
+
+        <div class="profile-image-wrapper">
+          <img
+            src="/images/profile.jpg"
+            alt="Navid Ahrary"
+            class="profile-image"
+          />
+        </div>
+      </header>
+
+      <div class="content">
+        <section>
+          <h2>Where I started</h2>
+
+          <p>
+            I graduated with a degree in Electrical Engineering —
+            Telecommunications. During my studies, however, I became deeply
+            interested in IT and web technologies and pursued them alongside my
+            academic path.
+          </p>
+
+          <p>
+            After completing my bachelor's degree and military service in 2017,
+            I began teaching myself Linux and earned LPIC-1-level knowledge.
+            From there, I moved into algorithms, programming, and web
+            development, working primarily with Python and Node.js.
+          </p>
+
+          <p>
+            During this period, I also explored mobile development with Flutter
+            and built several small educational projects. These experiments
+            helped me develop a broader understanding of software engineering
+            before I focused more seriously on backend and infrastructure work.
+          </p>
+        </section>
+
+        <section>
+          <h2>Backend development</h2>
+
+          <p>
+            My first serious project was a collaboration with a close friend,
+            where I worked as a Node.js Backend Developer. At the same time, I
+            was responsible for expanding my knowledge of Node.js while also
+            dealing with infrastructure and DevOps requirements for the Dongip
+            budget management application.
+          </p>
+
+          <p>
+            I later contributed to several smaller projects as a Backend and
+            Web3 Developer. This period gave me practical experience building
+            application services, working with different technologies, and
+            taking responsibility beyond a narrowly defined development role.
+          </p>
+        </section>
+
+        <section>
+          <h2>Entering cloud computing</h2>
+
+          <p>
+            In 2020, I started my first full-time role as a Node.js Backend
+            Developer. Alongside backend development, I gained hands-on
+            experience with IoT and Microsoft Azure.
+          </p>
+
+          <p>
+            This was my entry point into cloud computing. I became involved in
+            designing and implementing an Azure-based IoT solution for retail
+            stores, supporting customer and operational insights through
+            connected devices and cloud services.
+          </p>
+
+          <p>
+            Working on distributed systems, IoT, and cloud infrastructure
+            gradually shifted my focus from application development toward cloud
+            engineering and platform architecture.
+          </p>
+        </section>
+
+        <section>
+          <h2>Building Azure expertise</h2>
+
+          <p>
+            To strengthen my cloud knowledge, I earned Microsoft Azure
+            certifications including AZ-900, AZ-104, and AZ-204. These
+            certifications complemented the practical experience I was gaining
+            while designing, building, and operating Azure-based systems.
+          </p>
+        </section>
+
+        <section>
+          <h2>Cloud engineering today</h2>
+
+          <p>
+            Today, I work as an Azure Cloud Engineer, implementing and
+            maintaining cloud environments across IaaS, PaaS, and SaaS. My work
+            includes Infrastructure as Code with Terraform, automation and
+            delivery workflows with Azure DevOps, and the design and operation
+            of cloud platforms.
+          </p>
+
+          <p>
+            I approach cloud engineering with security and cost as fundamental
+            engineering constraints. This includes applying least-privilege
+            access principles, improving observability, and continuously looking
+            for opportunities to optimize cloud resources and operational
+            complexity.
+          </p>
+
+          <p>
+            I also work closely with Cybersecurity and Development teams to
+            build cloud environments that are secure, scalable, maintainable,
+            and practical to operate.
+          </p>
+        </section>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .about {
+    padding: 5rem 0;
+  }
+  .page-header {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 220px;
+    align-items: start;
+    gap: 4rem;
+
+    max-width: 1000px;
+    margin-bottom: 4rem;
+  }
+
+  .intro-content {
+    max-width: 700px;
+  }
+
+  .profile-image-wrapper {
+    width: 220px;
+  }
+
+  .profile-image {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+
+    object-fit: cover;
+
+    border-radius: 4px;
+
+    filter: grayscale(100%);
+  }
+
+  .section-label {
+    margin-bottom: 1rem;
+
+    color: var(--accent);
+
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+  }
+
+  .page-header h1 {
+    margin-bottom: 0;
+  }
+
+  .content {
+    max-width: 780px;
+  }
+
+  .content > section {
+    padding: 2.5rem 0;
+
+    border-top: 1px solid var(--border);
+  }
+
+  .content > section:last-child {
+    border-bottom: 1px solid var(--border);
+  }
+
+  .content h2 {
+    margin-bottom: 1.5rem;
+  }
+
+  .content p {
+    max-width: 720px;
+
+    color: var(--text-muted);
+
+    line-height: 1.7;
+  }
+
+  .content p:last-child {
+    margin-bottom: 0;
+  }
+
+  @media (max-width: 600px) {
+    .about {
+      padding: 3.5rem 0;
+    }
+
+    .page-header {
+      margin-bottom: 3rem;
+    }
+
+    .content > section {
+      padding: 2rem 0;
+    }
+  }
+</style>

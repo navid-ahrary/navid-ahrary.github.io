@@ -1,6 +1,6 @@
 ---
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
+import Header from "../components/layout/Header.astro";
+import Footer from "../components/layout/Footer.astro";
 import "../styles/global.css";
 
 interface Props {
@@ -10,7 +10,7 @@ interface Props {
 
 const {
   title = "Navid Ahrary — Cloud & Platform Engineer",
-  description = "Cloud and Platform Engineer focused on Azure, Kubernetes, Infrastructure as Code and secure cloud platforms.",
+  description = "Cloud and Platform Engineer focused on Azure, Kubernetes, Infrastructure as Code, distributed systems, automation, security, and cost optimization.",
 } = Astro.props;
 ---
 
@@ -18,11 +18,21 @@ const {
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
 
-    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <meta name="description" content={description} />
+
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
 
     <title>{title}</title>
   </head>

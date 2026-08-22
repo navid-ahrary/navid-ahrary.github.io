@@ -1,0 +1,34 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const posts = await getCollection("posts", ({ data }) => !data.draft);
+
+const sortedPosts = posts.sort(
+  (a, b) => b.data.publishedDate.valueOf() - a.data.publishedDate.valueOf(),
+);
+---
+
+<BaseLayout title="Posts — Navid Ahrary" description="Technical articles.">
+  <section>
+    <div class="container">
+      <h1>Posts</h1>
+
+      {
+        sortedPosts.map((post) => (
+          <article>
+            <p>{post.data.category}</p>
+
+            <h2>
+              <a href={`/posts/${post.id}`}>{post.data.title}</a>
+            </h2>
+
+            <p>{post.data.description}</p>
+
+            <a href={`/posts/${post.id}`}>Read article</a>
+          </article>
+        ))
+      }
+    </div>
+  </section>
+</BaseLayout>

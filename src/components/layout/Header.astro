@@ -1,0 +1,71 @@
+<header>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <div class="container nav">
+    <a class="brand" href="/"> Navid Ahrary </a>
+
+    <nav>
+      <a href="/posts">Posts</a>
+      <a href="/about">About</a>
+    </nav>
+
+    <div class="social-links">
+      <a
+        href="https://github.com/navid-ahrary"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="GitHub"
+      >
+        GitHub ↗
+      </a>
+
+      <a
+        href="https://www.linkedin.com/in/navid-ahrary/"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="LinkedIn"
+      >
+        LinkedIn ↗
+      </a>
+    </div>
+  </div>
+</header>
+
+<style>
+  header {
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav {
+    height: 72px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .brand {
+    font-weight: 650;
+    letter-spacing: -0.02em;
+  }
+
+  nav {
+    display: flex;
+    gap: 1.5rem;
+  }
+
+  nav a {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+  }
+
+  nav a:hover {
+    color: var(--text);
+  }
+</style>
