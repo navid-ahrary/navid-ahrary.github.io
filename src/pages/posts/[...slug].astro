@@ -1,48 +1,50 @@
 ---
-import { getCollection, render } from "astro:content";
+import { getCollection, getEntry, render } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 
 export async function getStaticPaths() {
-  const posts = await getCollection("posts", ({ data }) => !data.draft);
+  const posts = await getCollection("posts");
 
   return posts.map((post) => ({
-    params: { slug: post.id },
-    props: { post },
+    params: {
+      slug: post.id,
+    },
   }));
 }
 
-const { post } = Astro.props;
+const { slug } = Astro.params;
 
-const { Content } = await render(post);
+const entry = await getEntry("posts", slug!);
+
+if (!entry) {
+  return new Response("Not found", { status: 404 });
+}
+
+const { Content } = await render(entry);
 ---
 
-<BaseLayout
-  title={`${post.data.title} — Navid Ahrary`}
-  description={post.data.description}
->
+<BaseLayout>
   <article class="post">
     <div class="container">
       <header class="post-header">
-        <div class="post-meta">
-          <span>{post.data.category}</span>
+        <p class="category">{entry.data.category}</p>
 
-          <time datetime={post.data.publishedDate.toISOString()}>
-            {
-              post.data.publishedDate.toLocaleDateString("en-US", {
-                year: "numeric",
-                month: "long",
-                day: "numeric",
-              })
-            }
-          </time>
-        </div>
-
-        <h1>{post.data.title}</h1>
+        <h1>{entry.data.title}</h1>
 
         <p class="description">
-          {post.data.description}
+          {entry.data.description}
         </p>
       </header>
+
+      {
+        entry.data.banner && (
+          <img
+            class="post-banner"
+            src={entry.data.banner.src}
+            alt={entry.data.title}
+          />
+        )
+      }
 
       <div class="post-content">
         <Content />
@@ -87,22 +89,25 @@ const { Content } = await render(post);
 
   .post-banner {
     display: block;
-
     width: 100%;
     max-width: 100%;
+    height: auto;
 
-    aspect-ratio: 16 / 8;
+    margin: 2rem 0;
 
-    object-fit: cover;
-    object-position: center;
-
-    margin-bottom: 3rem;
-
-    border-radius: 6px;
+    border-radius: 8px;
   }
 
   .post-content {
     max-width: 760px;
+  }
+
+  .post-content :global(img) {
+    display: block;
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    margin: 2rem auto;
   }
 
   .post-content :global(p) {

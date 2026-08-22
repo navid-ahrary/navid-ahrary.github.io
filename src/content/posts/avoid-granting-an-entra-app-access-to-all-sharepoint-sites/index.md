@@ -3,7 +3,7 @@ title: "Avoid granting an Entra app access to all SharePoint sites"
 
 description: "When you need to grant an application read/write access to a specific site (rather than to all sites), there is no graphic interface in the Entra portal or SharePoint admin center. Maybe Microsfot is developing that, or it may be by design (my consideration)."
 
-publishedDate: 2026-08-22
+publishedDate: 2026-04-01
 
 category: "Cloud Security"
 
@@ -17,6 +17,8 @@ tags:
 featured: true
 
 draft: false
+
+banner: "./banner.png"
 ---
 
 
